@@ -1,0 +1,86 @@
+.toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 50px;
+  }
+
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  &__slider {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: $toggle-size;
+    flex-basis: $toggle-container-width;
+    border-radius: $toggle-size;
+    background-color: $color-red;
+    flex-shrink: 0;
+    transition: background-color 0.25s ease-in-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 1px;
+      height: calc($toggle-size - $spacing-xs);
+      width: calc($toggle-size - $spacing-xs);
+      border-radius: 9999px;
+      background-color: white;
+      transition: transform 0.375s ease-in-out;
+    }
+  }
+
+  &__input:checked+&__slider {
+    background-color: $color-green;
+
+    &::before {
+      border-color: $color-green;
+      transform: translateX(calc($toggle-container-width - $toggle-size));
+    }
+  }
+
+  &__input:focus+&__slider::before {
+    border-color: $color-red;
+  }
+
+  &__input:focus:checked+&__slider::before {
+    border-color: $color-green;
+  }
+
+  &__input:disabled+&__slider {
+    background-color: $color-red;
+
+    &::before {
+      background-color: $color-red;
+      border-color: $color-red;
+    }
+  }
+
+  &__status {
+    font-size: 12px;
+    line-height: 160%;
+
+    &--allowed {
+      color: $color-green;
+    }
+
+    &--blocked {
+      color: $color-red;
+    }
+  }
+}

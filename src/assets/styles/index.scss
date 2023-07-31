@@ -1,0 +1,50 @@
+@import "variables";
+@import "page";
+
+//components
+@import "components/_card";
+@import "components/_left-menu";
+@import "components/_toggle";
+
+@import url('https://fonts.googleapis.com/css2?family=AvertaStdPE&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'AvertaStdPE', sans-serif;
+
+  .app {
+    display: flex;
+    height: 100vh;
+  }
+}
+
+.page {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: $spacing-xl;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__content {
+      max-width: $max-width;
+      display: flex;
+      flex-wrap: wrap;
+
+      &>* {
+          margin: 0 $spacing-xl $spacing-xl 0;
+      }
+
+      @media (max-width: 767px) {
+          max-width: 100%;
+      }
+
+      @media (min-width: 768px) and (max-width: 1023px) {
+          max-width: 768px;
+      }
+
+      @media (min-width: 1024px) {
+          max-width: 1200px;
+      }
+  }
+}
