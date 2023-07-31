@@ -43,9 +43,9 @@ Styles were written in accordance with [BEM](https://getbem.com/) methodology.
 - Install project dependencies — `npm install` or `yarn`.
 - Launch the app — `npm run dev` or `yarn dev`
 
-   **Client** will become available at [http://localhost:3000](http://localhost:3000/)
+   **Client** will become available at [http://localhost:3001](http://localhost:3001/)
 
-   **Server** will become available at [http://localhost:3001](http://localhost:3001/)
+   **Server** will become available at [http://localhost:3000](http://localhost:3000/)
 
 ### Available Scripts
 

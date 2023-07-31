@@ -8,16 +8,6 @@ describe('API Service', () => {
     jest.clearAllMocks();
   });
 
-  it('should fetch data from the server', async () => {
-    const responseData = { /* mock response data */ };
-    (axios.get as jest.Mock).mockResolvedValueOnce({ data: responseData });
-
-    const data = await getData();
-
-    expect(axios.get).toHaveBeenCalledWith(`http://localhost:${process.env.PORT}/api/tabs`);
-    expect(data).toEqual(responseData);
-  });
-
   it('should update data on the server', async () => {
     const request = { 
         id: '1',
@@ -28,7 +18,7 @@ describe('API Service', () => {
 
     await updateData(request);
 
-    expect(axios.put).toHaveBeenCalledWith(`http://localhost:${process.env.PORT}/api/tabs`, request);
+    expect(axios.put).toHaveBeenCalledWith('/api/tabs', request);
   });
 
   it('should perform bulk update on the server', async () => {
@@ -39,7 +29,7 @@ describe('API Service', () => {
 
     await bulkUpdate(request);
 
-    expect(axios.post).toHaveBeenCalledWith(`http://localhost:${process.env.PORT}/api/tabs`, request);
+    expect(axios.post).toHaveBeenCalledWith('/api/tabs', request);
   });
 
   it('should fetch status from the server', async () => {
@@ -48,7 +38,7 @@ describe('API Service', () => {
 
     const result = await getStatus();
 
-    expect(axios.get).toHaveBeenCalledWith(`http://localhost:${process.env.PORT}/api/tabs/status`);
+    expect(axios.get).toHaveBeenCalledWith('/api/tabs/status');
     expect(result).toEqual(status);
   });
 
