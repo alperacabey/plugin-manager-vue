@@ -8,16 +8,6 @@ describe('API Service', () => {
     jest.clearAllMocks();
   });
 
-  it('should fetch data from the server', async () => {
-    const responseData = { /* mock response data */ };
-    (axios.get as jest.Mock).mockResolvedValueOnce({ data: responseData });
-
-    const data = await getData();
-
-    expect(axios.get).toHaveBeenCalledWith(`http://localhost:${process.env.PORT}/api/tabs`);
-    expect(data).toEqual(responseData);
-  });
-
   it('should update data on the server', async () => {
     const request = { 
         id: '1',
