@@ -12,7 +12,8 @@
     "dev:express": "node server.cjs",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "start": "concurrently \"yarn dev:vite\" \"yarn dev:express\""
   },
   "dependencies": {
     "axios": "^1.4.0",

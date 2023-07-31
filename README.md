@@ -1,3 +1,9 @@
+
+### Deployment
+
+Heroku: [Demo](https://plugin-manager-vue-f7fc88dfc1bd.herokuapp.com/)
+
+---
 ### 3rd party libraries
 - **vue-router** (router)
 - **vue/test-utils** (unit testing utility library)
