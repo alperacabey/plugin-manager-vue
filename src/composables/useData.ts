@@ -64,7 +64,7 @@ export default function useData(): { tabsData: Ref<Tabs[]>, allEnabled: Ref<bool
 
 export const updatePlugin = async (request: UpdateRequestModel) => {
   try {
-    const response = await updateData(request);
+    await updateData(request);
   } catch (error) {
     console.error('Failed to fetch data:', error);
   }

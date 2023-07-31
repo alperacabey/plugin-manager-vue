@@ -18,7 +18,7 @@ export default defineComponent({
     },
     setup() {
         const route = useRoute()
-        const activeRoute = computed(() => route.params.tab || "Marketing")
+        const activeRoute = computed(() => route.params.tab as string)
 
         return {
             activeRoute,

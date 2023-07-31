@@ -1,7 +1,7 @@
 <template>
     <nav class="left-menu">
         <div>
-            <img src="logo.svg" alt="Logo" class="left-menu__logo" />
+            <img src="/logo.svg" alt="Logo" class="left-menu__logo" />
             <router-link v-for="tab in tabsData" :key="tab.id" :to="tab.title" :class="{ 'left-menu__nav-link': true, 'left-menu__nav-link--active': activeRoute === tab.title }">
                 <img :src="`${tab.icon}.svg`" alt="Icon" class="left-menu__icon" />
                 {{ tab.title }}
