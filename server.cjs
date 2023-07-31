@@ -5,7 +5,7 @@ const serveStatic = require('serve-static')
 const path = require('path')
 
 const app = express();
-const port = 3001; // Change this to your desired port number
+const port = process.env.PORT || 3000;
 let isEnabled = true;
 
 // Enable CORS for all routes (allow requests from any origin)
