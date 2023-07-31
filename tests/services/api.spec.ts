@@ -14,7 +14,7 @@ describe('API Service', () => {
 
     const data = await getData();
 
-    expect(axios.get).toHaveBeenCalledWith('http://localhost:3001/api/tabs');
+    expect(axios.get).toHaveBeenCalledWith(`http://localhost:${process.env.PORT}/api/tabs`);
     expect(data).toEqual(responseData);
   });
 
@@ -28,7 +28,7 @@ describe('API Service', () => {
 
     await updateData(request);
 
-    expect(axios.put).toHaveBeenCalledWith('http://localhost:3001/api/tabs', request);
+    expect(axios.put).toHaveBeenCalledWith(`http://localhost:${process.env.PORT}/api/tabs`, request);
   });
 
   it('should perform bulk update on the server', async () => {
@@ -39,7 +39,7 @@ describe('API Service', () => {
 
     await bulkUpdate(request);
 
-    expect(axios.post).toHaveBeenCalledWith('http://localhost:3001/api/tabs', request);
+    expect(axios.post).toHaveBeenCalledWith(`http://localhost:${process.env.PORT}/api/tabs`, request);
   });
 
   it('should fetch status from the server', async () => {
@@ -48,7 +48,7 @@ describe('API Service', () => {
 
     const result = await getStatus();
 
-    expect(axios.get).toHaveBeenCalledWith('http://localhost:3001/api/tabs/status');
+    expect(axios.get).toHaveBeenCalledWith(`http://localhost:${process.env.PORT}/api/tabs/status`);
     expect(result).toEqual(status);
   });
 

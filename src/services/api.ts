@@ -1,7 +1,16 @@
 import axios from 'axios';
 import { UpdateRequestModel, BulkUpdateRequestModel, GetResponseModel } from '@/types';
 
-const apiURL = 'http://localhost:3000';
+let apiURL: string;
+
+if (typeof window === 'undefined') {
+  // Running on the server
+  apiURL = 'http://localhost:' + process.env.PORT || '3000';
+} else {
+  // Running on the client
+  apiURL = 'http://localhost:3000'; // Or the appropriate client-side URL
+}
+
 // Function to fetch data from the JSON file
 export async function getData(): Promise<GetResponseModel> {
   try {
