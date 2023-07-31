@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors'); // Import the cors middleware
 const data = require('./data/data.json');
-const serveStatic = require('serve-static')
+// const serveStatic = require('serve-static')
 const path = require('path')
 
 const app = express();
@@ -55,13 +55,13 @@ app.post('/api/tabs', express.json(), (req, res) => {
   res.json(data);
 });
 
-//use the serve-static package to serve the bundled app files in the dist directory
-app.use('/', serveStatic(path.join(__dirname, '/dist')))
+// //use the serve-static package to serve the bundled app files in the dist directory
+// app.use('/', serveStatic(path.join(__dirname, '/dist')))
 
-// this * route is to serve project on different page routes except root `/`
-app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'dist' , 'index.html'))
-})
+// // this * route is to serve project on different page routes except root `/`
+// app.get('*', function (req, res) {
+//     res.sendFile(path.join(__dirname, 'dist' , 'index.html'))
+// })
 
 // Start the server
 app.listen(port, () => {
