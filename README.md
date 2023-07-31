@@ -1,7 +1,7 @@
 
 ### Deployment
 
-Heroku: [Demo](https://plugin-manager-vue-f7fc88dfc1bd.herokuapp.com/)
+Heroku: [Demo](https://plugin-manager-vue-4f6761e6949d.herokuapp.com/)
 
 ---
 ### 3rd party libraries
