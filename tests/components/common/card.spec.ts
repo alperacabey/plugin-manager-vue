@@ -9,6 +9,7 @@ describe('Card', () => {
     title: 'Plugin 1',
     description: 'Description 1',
     isActive: true,
+    isDisabled: false,
   };
 
   beforeEach(() => {
